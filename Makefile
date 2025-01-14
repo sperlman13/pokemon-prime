@@ -166,6 +166,7 @@ ROMTEST      ?= $(shell { command -v mgba-rom-test || command -v $(TOOLS_DIR)/mg
 ROMTESTHYDRA := $(TOOLS_DIR)/mgba-rom-test-hydra/mgba-rom-test-hydra$(EXE)
 
 PERL := perl
+SCRIPT := tools/poryscript/poryscript$(EXE)
 SHA1 := $(shell { command -v sha1sum || command -v shasum; } 2>/dev/null) -c
 
 MAKEFLAGS += --no-print-directory
@@ -288,6 +289,7 @@ syms: $(SYM)
 
 clean: tidy clean-tools clean-check-tools clean-generated clean-assets
 	@$(MAKE) clean -C libagbsyscall
+	rm -f $(patsubst %.pory,%.inc,$(shell find data/ -type f -name '*.pory'))
 
 clean-assets:
 	rm -f $(MID_SUBDIR)/*.s
@@ -327,6 +329,7 @@ generated: $(AUTO_GEN_TARGETS)
 %.png: ;
 %.pal: ;
 %.aif: ;
+%.pory: ;
 
 %.1bpp:   %.png  ; $(GFX) $< $@
 %.4bpp:   %.png  ; $(GFX) $< $@

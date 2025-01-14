@@ -1019,3 +1019,54 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_EventScript_FishingRod::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_SUPER_ROD, LittlerootTown_EventScript_FishingRod_2
+	msgbox LittlerootTown_EventScript_FishingRod_Text_7
+
+LittlerootTown_EventScript_FishingRod_1:
+	release
+	return
+
+LittlerootTown_EventScript_FishingRod_2:
+	msgbox LittlerootTown_EventScript_FishingRod_Text_0
+	msgbox LittlerootTown_EventScript_FishingRod_Text_1
+	msgbox LittlerootTown_EventScript_FishingRod_Text_2
+	msgbox LittlerootTown_EventScript_FishingRod_Text_3
+	msgbox LittlerootTown_EventScript_FishingRod_Text_4
+	msgbox LittlerootTown_EventScript_FishingRod_Text_5
+	msgbox LittlerootTown_EventScript_FishingRod_Text_6
+	giveitem ITEM_SUPER_ROD
+	setflag FLAG_RECEIVED_OLD_ROD
+	setflag FLAG_RECEIVED_GOOD_ROD
+	setflag FLAG_RECEIVED_SUPER_ROD
+	goto LittlerootTown_EventScript_FishingRod_1
+
+LittlerootTown_EventScript_FishingRod_Text_0:
+	.string "Yes, it's me, the famous Littleroot\n"
+	.string "Lapras.$"
+
+LittlerootTown_EventScript_FishingRod_Text_1:
+	.string "Hmmm... I see great potential in you.$"
+
+LittlerootTown_EventScript_FishingRod_Text_2:
+	.string "I shall issue unto you this, my first and\n"
+	.string "greatest order.$"
+
+LittlerootTown_EventScript_FishingRod_Text_3:
+	.string "Hunt the beasts of the ocean.$"
+
+LittlerootTown_EventScript_FishingRod_Text_4:
+	.string "Grant them no quarter. Show them no\n"
+	.string "mercy.$"
+
+LittlerootTown_EventScript_FishingRod_Text_5:
+	.string "Become a brave warrior of the sea.$"
+
+LittlerootTown_EventScript_FishingRod_Text_6:
+	.string "This is my charge.$"
+
+LittlerootTown_EventScript_FishingRod_Text_7:
+	.string "Carry out my mission. Ask me no further\n"
+	.string "questions.$"
