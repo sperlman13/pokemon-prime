@@ -40,6 +40,7 @@
 #include "data.h"
 #include "vs_seeker.h"
 #include "item.h"
+#include "constants/region_map_sections.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
 #include "constants/game_stat.h"
@@ -988,6 +989,8 @@ static void CB2_GiveStarter(void)
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    u8 metLocation = MAPSEC_LITTLEROOT_TOWN;
+    SetMonData(&gPlayerParty[0], MON_DATA_MET_LOCATION, &metLocation);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
