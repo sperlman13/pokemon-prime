@@ -1065,8 +1065,8 @@ LittlerootTown_EventScript_FishingRod_Text_5:
 	.string "Become a brave warrior of the sea.$"
 
 LittlerootTown_EventScript_FishingRod_Text_6:
-	.string "This is my charge.$"
+	.string "This is your charge.$"
 
 LittlerootTown_EventScript_FishingRod_Text_7:
-	.string "Carry out my mission. Ask me no further\n"
+	.string "Carry out your mission. Ask me no further\n"
 	.string "questions.$"
